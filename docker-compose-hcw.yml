@@ -1,0 +1,93 @@
+version: "3.8"
+
+services:
+  mongo:
+    image: mongo:6
+    volumes:
+      - ./data/mongo:/data/mongo
+
+  patient:
+    build: ./frontend-patient
+    ports:
+      - "8000:8080"
+    environment:
+      - BACKEND_URL=http://backend:1337
+    depends_on:
+      - mongo
+      - backend
+    volumes:
+      - ./frontend-patient:/usr/src/app
+      - /usr/src/app/node_modules
+
+  doctor:
+    build: ./frontend-doctor
+    ports:
+      - "8001:8081"
+    environment:
+      - BACKEND_URL=http://backend:1337
+    depends_on:
+      - mongo
+      - backend
+    volumes:
+      - ./frontend-doctor:/usr/src/app
+      - /usr/src/app/node_modules
+
+  admin:
+    build: ./frontend-admin
+    ports:
+      - "8002:8082"
+      # - "8002:4200"
+    environment:
+      - BACKEND_URL=http://backend:1337
+      # - CHOKIDAR_USEPOLLING=true # Required for file change detection in Docker
+      # - NODE_OPTIONS=--openssl-legacy-provider
+    depends_on:
+      - mongo
+      - backend
+    volumes:
+      - ./frontend-admin:/usr/src/app
+      - /usr/src/app/node_modules
+    # command: ng serve --host 0.0.0.0
+
+  backend:
+    build: ./backend
+    ports:
+      - "1337:1337"
+    environment:
+      - DB_URI=mongodb://mongo:27017/hcw-athome
+      - REDIS_HOST=redis
+      - APP_SECRET=''
+      - NODE_ENV=development
+      - PUBLIC_URL=https://localhost
+      - MAIL_SMTP_HOST=<https://my-smtp-server.ch%3E/
+      - MAIL_SMTP_PORT=465
+      - MAIL_SMTP_SECURE=true
+      - MAIL_SMTP_SENDER=noreply@hcw-athome.ch
+      - MAIL_SMTP_USER=
+      - MAIL_SMTP_PASSWORD=
+      - LOGIN_METHOD=password
+      - CLAM_HOST=clamav
+      - MEDIASOUP_URL=https://localhost
+      - MEDIASOUP_USER=abcd
+      - MEDIASOUP_SECRET=1234
+      - BRANDING=ICRC@Home
+      - ACCESSIBILITY_MODE=false
+      - ATTACHMENTS_DIR=/data/attachments
+    depends_on:
+      - mongo
+      - redis
+      - clamav
+    volumes:
+      - ./data/attachments:/data/attachments
+      - ./backend:/usr/src/app # Add this line to mount your local backend code
+      - /usr/src/app/node_modules # Use a named volume for node_modules
+    # command: npm run dev
+    restart: always
+
+  redis:
+    image: redis
+
+  clamav:
+    image: clamav/clamav
+    ports:
+      - "3310:3310"

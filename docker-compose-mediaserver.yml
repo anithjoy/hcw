@@ -1,0 +1,36 @@
+version: "3.8"
+
+services:
+  backend:
+    build: ./mediasoup
+    ports:
+      - "3443:3443"
+    environment:
+      - JWT_SECRET=aadsrwerrf
+      - API_USER=abcd
+      - API_SECRET=1234
+      - PUBLIC_IP=localhost
+      - ANNOUNCED_IP=localhost
+      - LISTEN=3443
+      - CERT=/etc/mediasoup-api/certs/example.com/fullchain.pem
+      - KEY=/etc/mediasoup-api/certs/example.com/privkey.pem
+      - REDIS_HOST=redis
+    depends_on:
+      - redis
+    volumes:
+      - ./data/certbot/:/etc/mediasoup-api/certs
+
+  redis:
+    image: redis
+
+  # certbot:
+  #   image: certbot/certbot:latest
+  #   volumes:
+  #     - ./data/certbot/:/etc/letsencrypt/live
+  #   command: certonly --standalone -d turn.mydomain.com --non-interactive --agree-tos --email info@mydomain.com
+
+  # certbot-renew:
+  #   image: certbot/certbot:latest
+  #   volumes:
+  #     - ./data/certbot/:/etc/letsencrypt/live
+  #   entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"

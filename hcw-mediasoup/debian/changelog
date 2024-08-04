@@ -1,0 +1,105 @@
+mediasoup-api (0.9.16) bullseye; urgency=medium
+
+  * Force repository refresh
+
+ -- Olivier Bitsch <olivier.b@iabsis.com>  Mon, 11 Dec 2023 14:41:02 +0100
+
+mediasoup-api (0.9.15) bullseye; urgency=medium
+
+  * Remove useless command
+  * Fix build dockerfile to use package-lock
+  * Fix local dev start
+  * New podman build in Makefile + Dockerfile unprivileaged
+  * Adding healthcheck
+  * Remove useless log
+
+ -- Olivier Bitsch <olivier.b@iabsis.com>  Mon, 11 Dec 2023 14:40:37 +0100
+
+mediasoup-api (0.9.14) bullseye; urgency=medium
+
+  * Fix package-lock usage
+
+ -- Olivier Bitsch <olivier.b@iabsis.com>  Mon, 18 Sep 2023 10:59:59 +0200
+
+mediasoup-api (0.9.13) bullseye; urgency=medium
+
+  * Attempt to fix build issue
+
+ -- Olivier Bitsch <olivier.b@iabsis.com>  Mon, 18 Sep 2023 10:22:38 +0200
+
+mediasoup-api (0.9.12) bullseye; urgency=medium
+
+  * Update mediasoup
+
+ -- Olivier Bitsch <olivier.b@iabsis.com>  Mon, 18 Sep 2023 10:06:48 +0200
+
+mediasoup-api (0.9.11) bullseye; urgency=medium
+
+  * Add rules to build with docker
+
+ -- Olivier Bitsch <olivier.b@iabsis.com>  Sat, 16 Sep 2023 02:03:14 +0200
+
+mediasoup-api (0.9.9) bullseye; urgency=medium
+
+  * Switch to npm to build
+
+ -- Olivier Bitsch <olivier.b@iabsis.com>  Sat, 16 Sep 2023 01:34:57 +0200
+
+mediasoup-api (0.9.7) bionic; urgency=medium
+
+  * * Update temporary Dockerfile
+  * Add lock
+
+ -- Olivier Bitsch <olivier.b@iabsis.com>  Sat, 16 Sep 2023 01:14:50 +0200
+
+mediasoup-api (0.9.6) bionic; urgency=medium
+
+  * Remove redis dependancy
+
+ -- Olivier Bitsch <olivier.b@iabsis.com>  Fri, 15 Sep 2023 07:46:52 +0200
+
+mediasoup-api (0.9.5) bionic; urgency=medium
+
+  * Rebuild with node 16
+  * Add missing dependancy
+  * Remove test during build
+  * Add option to whitelist Front when not behind reverse proxy
+  * New script for starting local dev
+  * Configuring Whitelist from global vars
+
+ -- Olivier Bitsch <olivier.b@iabsis.com>  Thu, 14 Sep 2023 10:03:46 +0200
+
+mediasoup-api (0.9.4) bionic; urgency=medium
+
+  [ Muhammed ]
+  *  only one user per test room
+
+  [ Olivier Bitsch ]
+  * New helper python for Nagios
+  * Dockerization
+
+  [ Gor Grigoryan ]
+  * backupTurnServers env change
+
+  [ Olivier Bitsch ]
+  * New var to configure Redis
+  * Copy sample certificates to correct path
+  * Add new var for turn servers
+  * Fix redis config if password is not defined
+
+  [ Gor Grigoryan ]
+  * change redis options
+
+ -- Olivier Bitsch <olivier.b@iabsis.com>  Fri, 11 Aug 2023 15:30:56 +0200
+
+mediasoup-api (0.9.3) bionic; urgency=medium
+
+  * Fix RTC value
+
+ -- Olivier Bitsch <olivier.b@iabsis.com>  Thu, 15 Apr 2021 12:04:38 +0200
+
+mediasoup-api (0.9.2) bionic; urgency=medium
+
+  * Initial Release.
+
+ -- Olivier Bitsch <olivier.b@iabsis.com>  Wed, 17 Feb 2021 16:33:10 +0100

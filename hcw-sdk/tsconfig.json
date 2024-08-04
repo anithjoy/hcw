@@ -1,0 +1,38 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "hug-angular": [
+        "dist/hug-angular/hug-angular",
+        "dist/hug-angular"
+      ],
+      "hug-angular-lib": [
+        "dist/hug-angular-lib/hug-angular-lib",
+        "dist/hug-angular-lib"
+      ]
+    },
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
+
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true,
+    "enableIvy": true
+  },
+
+}

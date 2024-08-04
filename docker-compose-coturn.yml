@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  coturn:
+    image: docker.io/coturn/coturn
+    environment:
+      - DETECT_EXTERNAL_IP=yes
+      - DETECT_RELAY_IP=yes
+    ports:
+      - "3478:3478"
+      - "3478:3478/udp"
+      - "5349:5349"
+      - "5349:5349/udp"
+      - "60000-61000:60000-61000/udp"
+    command: >
+      --fingerprint
+      --lt-cred-mech
+      --user myuser:mypass
+      --realm yourdomain.com
+    network_mode: "host"

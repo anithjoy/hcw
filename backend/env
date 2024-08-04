@@ -1,0 +1,47 @@
+################
+### DATABASE ###
+# Configure here database, by default
+# a local mongo is used.
+DB_URI=mongodb://127.0.0.1:27017/hcw-athome
+
+
+NODE_ENV=development
+PUBLIC_URL=http://patient:8080
+
+DOCTOR_URL=http://doctor:8081
+ADMIN_URL=http://admin:8082
+
+
+
+
+LOGIN_METHOD=password
+
+
+CLAM_SOCKET=/var/run/clamav/clamd.ctl
+CLAM_HOST=127.0.0.1
+CLAM_PORT=3310
+# if you want to use an external server, you can alternatively
+# use CLAM_HOST. Ensure the port is reachable (default: 3310).
+#CLAM_HOST=192.168.x.x
+#CLAM_PORT=3310
+# By default, we allow only mimetypes application/pdf,image/jpeg,image/png,image/gif
+# You can uncomment and add more mimetype if required
+#EXTRA_MIME_TYPES='application/pdf,image/jpeg,image/png,image/gif'
+
+
+
+
+########################
+### MEDIASOUP SERVER ###
+# Configure a mediasoup info here. This will be used as
+# default server unless you add one or more from admin
+# interface, so this server will be used as fallback.
+MEDIASOUP_URL=http://0.0.0.0:3480
+MEDIASOUP_USER=root
+MEDIASOUP_SECRET=root
+
+
+
+
+REDIS_HOST=127.0.0.1
+REDIS_PORT=6379

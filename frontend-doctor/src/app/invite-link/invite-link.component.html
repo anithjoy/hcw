@@ -1,0 +1,33 @@
+<h2 class="title">
+  {{ 'sendInviteLink.title' | translate }}
+</h2>
+<div mat-dialog-content class="dialog-content">
+  <div class="field-container">
+    <div class="expert-link-wrapper">
+      <p>
+        {{ 'sendInviteLink.subTitle' | translate }}
+      </p>
+      <div class="input-wrapper">
+        <mat-form-field class="w-100">
+          <mat-label class="label"
+            >{{ 'sendInviteLink.label' | translate }}
+          </mat-label>
+          <input matInput readonly [(ngModel)]="data.link" />
+        </mat-form-field>
+
+        <mat-icon
+          svgIcon="copy"
+          (click)="copy()"
+          [cdkCopyToClipboard]="data.link"></mat-icon>
+      </div>
+
+      <button
+        mat-button
+        class="secondary-button-outlined"
+        (click)="onNoClick()"
+        type="button">
+        {{ 'sendInviteLink.close' | translate }}
+      </button>
+    </div>
+  </div>
+</div>

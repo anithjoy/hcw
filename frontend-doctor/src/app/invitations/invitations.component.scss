@@ -1,0 +1,110 @@
+
+mat-grid-list {
+  background-color: #ffffff;
+}
+
+span.tile-header {
+  font-size: 11px;
+  color: #3f3f3f;
+}
+
+.desc {
+  margin: 150px auto 20px 55px;
+  width: 50%;
+}
+
+.edit-button {
+  margin-top: 10px;
+}
+
+.pdf-table {
+  margin: auto;
+  font-size: 40px;
+  width: 60%;
+
+  tr {
+    border-bottom: 1px solid#b1b1b191;
+
+    height: 143px;
+  }
+
+  th,
+  td {
+    margin: 10px auto;
+    border-bottom: 1px solid#b1b1b191;
+    padding: 16px;
+  }
+
+  tr:first-child > th,
+  tr:first-child > td {
+    border-top: 1px solid#b1b1b191;
+  }
+
+  th {
+    margin-right: 20px;
+    width: 503px;
+    border-left: 1px solid#b1b1b191;
+    border-right: 1px solid#b1b1b191;
+  }
+
+  td {
+    border-right: 1px solid#b1b1b191;
+  }
+}
+.noCon,
+.invite-btn {
+  margin-left: 80px;
+}
+.invite-btn {
+  margin: 20px 55px;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border-radius: 50px;
+  // margin: 20px;
+  font-size: 12px;
+}
+mat-card {
+  ::ng-deep .mat-grid-tile .mat-figure {
+    justify-content: start;
+    padding-left: 1em;
+  }
+}
+
+.loading-wrapper {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.invitations {
+  background: #fff;
+  border-collapse: collapse;
+  width: 92%;
+  margin: auto;
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+
+  tr {
+    border-top: 1px solid #b1b1b191;
+    border-left: 2px solid #fff;
+    &:hover {
+      border-left: 2px solid var(--primary-color);
+    }
+  }
+  td {
+    padding: 12px 1%;
+  }
+  .tile-header {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 400;
+  }
+}
+
+.btn__cancel {
+  background-color: rgb(255, 45, 45);
+  color: #ffffff;
+}
